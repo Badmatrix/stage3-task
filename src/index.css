@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+   
+    html {
+        font-family: "Inria Serif", serif;
+    }
+
+    li {
+        font-family: "Inter",
+            sans-serif;
+    }
+
+    .copyright {
+        font-family: "Inter",
+            sans-serif;
+    }
+
+    .displayList {
+        font-family: "Inria Serif", serif;
+    }
+
+    .formP,
+    button {
+        font-family: "Inter",
+            sans-serif;
+    }
+}
+
+body{
+    @apply max-w-full bg-red-50/60 w-full
+}
+.icon {
+    @apply border border-wine-800 rounded-full md:p-3 p-2 bg-wine-800
+}
+
+input::placeholder {
+    @apply opacity-20 text-sm
+}
+
+
+
+.topNav li,
+nav li a {
+
+    @apply py-2 cursor-pointer font-medium
+}
+
+.topNav li a.active {
+    @apply underline text-white font-semibold
+}
+
+.sidenav li {
+
+    @apply hover:bg-wine-100 my-5 rounded-full capitalize text-wine-900 px-1 text-sm font-medium
+}
+
+.sidenav h1 {
+    @apply capitalize my-5 font-bold text-lg
+}
+
+.productNav li {
+    @apply px-2 py-4
+}
+
+
+
+.social {
+    @apply bg-wine-700 rounded-full aspect-square flex justify-center items-center align-middle p-3 cursor-pointer
+}
+
+.footTab li {
+
+    @apply flex justify-between capitalize mx-2 text-newgray-200 my-2
+}
+
+.footTab input {
+    @apply placeholder:text-gray-100 py-1 px-2 rounded-full bg-wine-500 outline outline-1 outline-wine-800 w-[80%] my-2 placeholder:text-xs lg:w-1/2
+}
+
+.navFoot h1 {
+    @apply font-bold capitalize my-3
+}
+
+.navFoot li {
+    @apply font-medium mb-1
+}
+
+
+
+button {
+    @apply text-white py-1 bg-wine-800 w-5/6 rounded-lg hover:bg-wine-900 transition-colors duration-300 cursor-pointer
+}
+
+.detail li span, .detail h6 {
+    @apply font-bold capitalize
+}
