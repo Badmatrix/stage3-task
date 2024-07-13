@@ -7,7 +7,7 @@ export default function Home() {
   const user = useSelector((state) => state.user.username);
   return (
     <div className=" font-bold text-2xl">
-      {!user ? <CreateUser /> : <Username />}
+      HomePage <Username />
     </div>
   );
 }

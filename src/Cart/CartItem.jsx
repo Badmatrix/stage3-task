@@ -16,7 +16,7 @@ export default function CartItem({ cart }) {
     function handleDecreaseItem(id) {
         dispatch(decreaseItemQuantity(id));
     }
-    console.log(cart)
+    // console.log(cart)
   return (
     <li className=" flex flex-wrap justify-between items-center py-5 px-3 gap-y-3 border-b">
       <div className="flex items-center gap-3">
