@@ -11,7 +11,7 @@ export default function Error() {
           error.data || "error loading data try again later"
         }`}</p>
         <h6 className=" hover:underline  text-wine-400">
-          <Link to="/">go back to home page</Link>
+          <Link to="/">go to product to start ordering</Link>
         </h6>
       </div>
     </section>

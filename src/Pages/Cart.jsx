@@ -3,6 +3,7 @@ import CartItem from "../Cart/CartItem";
 import Button from "../Ui/Button";
 import EmptyCart from "../Cart/EmptyCart"
 import { clearCart } from "../Cart/CartSlice";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   window.scrollTo(0,0)
@@ -19,7 +20,9 @@ export default function Cart() {
             ))}
           </ul>
           <div className="flex justify-end gap-5 flex-wrap">
-            <Button>shop</Button>
+            <Button>
+              <Link to="/order/new">shop</Link>
+            </Button>
             <Button
               onclick={() => {
                 dispatch(clearCart());
@@ -30,7 +33,7 @@ export default function Cart() {
           </div>
         </>
       ) : (
-        <EmptyCart/>
+        <EmptyCart />
       )}
     </div>
   );

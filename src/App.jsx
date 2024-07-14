@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppLayout from "./Ui/AppLayout";
 import Error from "./Ui/Error";
-import Home from "./Pages/Home";
+// import Home from "./Pages/Home";
 import Cart from "./Pages/Cart";
 import ProductMenu, { loader as productsLoader } from "./Pages/ProductMenu";
-import Order from "./Order/Order";
 import Product, { loader as detailsLoader } from "./Pages/Product";
+import CheckOut from "./Pages/CheckOut";
 
 function App() {
   const router = createBrowserRouter([
@@ -34,7 +34,7 @@ function App() {
         },
         {
           path: "/order/new",
-          element: <Order />,
+          element: <CheckOut/>
         },
       ],
       errorElement:<Error/>
