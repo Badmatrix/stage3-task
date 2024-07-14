@@ -12,22 +12,22 @@ function App() {
     {
       element: <AppLayout />,
       children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
+        // {
+        //   path: "/",
+        //   element: <Home />,
+        // },
         {
           path: "/cart",
           element: <Cart />,
         },
         {
-          path: "/product",
+          path: "/",
           element: <ProductMenu />,
           loader: productsLoader,
           errorElement: <Error />,
         },
         {
-          path: "/product/:id",
+          path: "/:id",
           element: <Product />,
           loader: detailsLoader,
           errorElement: <Error />,
@@ -37,6 +37,7 @@ function App() {
           element: <Order />,
         },
       ],
+      errorElement:<Error/>
     },
   ]);
   return <RouterProvider router={router} />;

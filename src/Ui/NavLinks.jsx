@@ -8,7 +8,7 @@ export default function NavLinks() {
           <NavLink to="/">home</NavLink>
         </li>
         <li>
-          <NavLink to="/product">product</NavLink>
+          <NavLink to="/">product</NavLink>
         </li>
         <li>about us</li>
         <li>contact</li>

@@ -5,6 +5,7 @@ import EmptyCart from "../Cart/EmptyCart"
 import { clearCart } from "../Cart/CartSlice";
 
 export default function Cart() {
+  window.scrollTo(0,0)
   const dispatch = useDispatch();
   const cartItems = useSelector((cart) => cart.cart.cart);
 

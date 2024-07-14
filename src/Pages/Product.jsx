@@ -5,8 +5,9 @@ import ProductInfo from "../Menu/ProductInfo";
 import ProductDetails from "../Menu/ProductDetails";
 
 export default function ProductDescription() {
+  window.scrollTo(0, 0);
   const product = useLoaderData();
-  console.log(product);
+  // console.log(product);
   return (
     <section className="mx-7 my-10">
       <ProductInfo product={product} />
