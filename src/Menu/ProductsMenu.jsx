@@ -3,7 +3,8 @@ import ProductMenuItem from "./ProductMenuItem";
 import ProductMenuNav from "./ProductMenuNav";
 import ProductTopBar from "./ProductTopBar";
 
-export default function ProductsMenu({ products }) {
+export default function ProductsMenu({ products, handlePageDec,handlePageInc,pageNum }) {
+ 
   return (
     <section className="col-span-3 ">
       <ProductTopBar />
@@ -12,7 +13,11 @@ export default function ProductsMenu({ products }) {
           <ProductMenuItem key={product.id} product={product} />
         ))}
       </ul>
-      <ProductMenuNav />
+      <ProductMenuNav
+        handlePageInc={handlePageInc}
+        handlePageDec={handlePageDec}
+        pageNum={pageNum}
+      />
     </section>
   );
 }

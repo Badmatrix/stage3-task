@@ -6,8 +6,25 @@ import Cart from "./Pages/Cart";
 import ProductMenu, { loader as productsLoader } from "./Pages/ProductMenu";
 import Product, { loader as detailsLoader } from "./Pages/Product";
 import CheckOut from "./Pages/CheckOut";
+import SuccessOrder from "./Order/SuccessOrder";
+import { useState } from "react";
 
 function App() {
+  const [pageNum, setPageNum] = useState(1);
+  function handlePageInc() {
+    if (pageNum < 4 ) {
+      setPageNum((num) => num + 1);
+      // console.log(pageNum)
+    }
+   
+  }
+  function handlePageDec() {
+    if (pageNum > 1) {
+      setPageNum((num) => num - 1);
+      // console.log(pageNum);
+
+    }
+  }
   const router = createBrowserRouter([
     {
       element: <AppLayout />,
@@ -22,8 +39,14 @@ function App() {
         },
         {
           path: "/",
-          element: <ProductMenu />,
-          loader: productsLoader,
+          element: (
+            <ProductMenu
+              handlePageInc={handlePageInc}
+              handlePageDec={handlePageDec}
+              pageNum={pageNum}
+            />
+          ),
+          loader: () => productsLoader(pageNum),
           errorElement: <Error />,
         },
         {
@@ -34,10 +57,14 @@ function App() {
         },
         {
           path: "/order/new",
-          element: <CheckOut/>
+          element: <CheckOut />,
+        },
+        {
+          path: "/success",
+          element: <SuccessOrder />,
         },
       ],
-      errorElement:<Error/>
+      errorElement: <Error />,
     },
   ]);
   return <RouterProvider router={router} />;

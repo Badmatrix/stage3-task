@@ -1,10 +1,11 @@
+
 const apikey = "2c0b7277968546778dded1fa7673a59b20240713001536325110";
 const appId = "2ZG3CTAVFT9G2RH";
 const orgId = "dbe4c039a8e3480db9d254f7b10e049a";
-const query = `organization_id=${orgId}&Appid=${appId}&Apikey=${apikey}`;
+const query = `size=${9}&Appid=${appId}&Apikey=${apikey}`;
 
-export async function getAllProducts() {
-  const res = await fetch(`/api/products?${query}`);
+export async function getAllProducts(pageNum) {
+  const res = await fetch(`/api/products?organization_id=${orgId}&page=${pageNum}&${query}`);
   if (!res.ok) throw Error("Failed getting products");
 
 

@@ -6,11 +6,10 @@ import { useNavigation } from "react-router-dom";
 import { getCart, getTotalCartprice } from "../Cart/CartSlice";
 import { useSelector } from "react-redux";
 
-
 export default function OrderOverview({ type }) {
-  const cart = useSelector(getCart)
-  
-    const totalCartPrice = useSelector(getTotalCartprice);
+  const cart = useSelector(getCart);
+
+  const totalCartPrice = useSelector(getTotalCartprice);
   // const totalCartPrice = 20;
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
