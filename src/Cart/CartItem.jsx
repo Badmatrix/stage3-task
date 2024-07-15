@@ -12,10 +12,10 @@ import {
 } from "./CartSlice";
 
 export default function CartItem({ cart }) {
-  const { id, name, brand, image, unitPrice, totalPrice } = cart;
+  const { id, name, brand, image, totalPrice } = cart;
+
   console.log(cart)
   const currentQuantity = useSelector(getCurrentQuantity(id));
-  // console.log(currentQuantity);
 
   const newPrice=useSelector(getCurrentPrice(id)) * currentQuantity
   const dispatch = useDispatch();
@@ -30,7 +30,6 @@ export default function CartItem({ cart }) {
   function handleDecreaseItem(id) {
     dispatch(decreaseItemQuantity(id));
   }
-  // console.log(cart)
   const imgSrc =
     cart.image === undefined
       ? "/images/image 22.svg"

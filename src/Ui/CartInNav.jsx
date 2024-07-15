@@ -3,10 +3,11 @@ import { BsCart3 } from "react-icons/bs";
 import { FaRegUser } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { getTotalCartQuantity } from "../Cart/CartSlice";
 
 export default function CartInNav() {
-  const cartTotal = useSelector((cart) => cart.cart.cart);
-  const num = cartTotal?.length;
+  const num = useSelector(getTotalCartQuantity);
+  // const num = cartTotal?.length;
   return (
     <div className=" flex gap-3 items-center relative">
       <NavLink to="/cart">

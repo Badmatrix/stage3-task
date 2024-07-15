@@ -57,7 +57,8 @@ function App() {
           element: <SuccessOrder />,
         },
       ],
-      errorElement: <Error />,
+          errorElement: <Error />,
+    
     },
   ]);
   return <RouterProvider router={router} />;

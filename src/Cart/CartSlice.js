@@ -42,7 +42,7 @@ export const {
 export const getTotalCartQuantity = (state) =>
   state.cart.cart.reduce((sum, item) => sum + item.quantity, 0);
 export const getCurrentQuantity = (id) => (state) =>
-  state.cart.cart.find((item) => item.id === id)?.quantity ?? 0;
+  state.cart.cart.find((item) => item.id === id)?.quantity ?? 1;
 
 export const getCurrentPrice = (id) => (state) =>
   state.cart.cart.find((item) => item.id === id)?.unitPrice ?? 0;

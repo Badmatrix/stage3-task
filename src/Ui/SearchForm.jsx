@@ -2,7 +2,7 @@
 import CartInNav from "./CartInNav";
 import BarIcon from "./BarIcon";
 
-export default function SearchForm({ carts }) {
+export default function SearchForm() {
   return (
     <div className="flex justify-between md:gap-5 ">
       <div className="block md:hidden cursor-pointer font-extrabold text-6xl text-wine-900 lowercase">
@@ -16,7 +16,7 @@ export default function SearchForm({ carts }) {
         />
       </form>
 
-      <CartInNav carts={carts} />
+      <CartInNav />
     </div>
   );
 }

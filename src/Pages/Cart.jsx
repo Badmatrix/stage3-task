@@ -2,20 +2,20 @@ import { useSelector, useDispatch } from "react-redux";
 import CartItem from "../Cart/CartItem";
 import Button from "../Ui/Button";
 import EmptyCart from "../Cart/EmptyCart"
-import { clearCart } from "../Cart/CartSlice";
+import { clearCart, getCart } from "../Cart/CartSlice";
 import { Link } from "react-router-dom";
 
 export default function Cart() {
-  window.scrollTo(0,0)
   const dispatch = useDispatch();
-  const cartItems = useSelector((cart) => cart.cart.cart);
+  const cartItems = useSelector(getCart);
+  const reverseCart = [...cartItems].reverse()
 
   return (
     <div className="my-10 mx-7">
       {cartItems.length > 0 ? (
         <>
           <ul className="space-y-4 my-5">
-            {cartItems.map((cart) => (
+            {reverseCart.map((cart) => (
               <CartItem cart={cart} key={cart.id} />
             ))}
           </ul>

@@ -9,8 +9,8 @@ export default function ProductInfo({ product }) {
   const navigate = useNavigate()
   // console.log(product)
     const { id, name, current_price,photos } = product;
-  const currentQuantity = useSelector(getCurrentQuantity(id));
-  console.log(currentQuantity)
+  // const currentQuantity = useSelector(getCurrentQuantity(id));
+  
   const dispatch=useDispatch()
   function handleAddToCart() {
     const newItem = {
@@ -20,7 +20,7 @@ export default function ProductInfo({ product }) {
       image: photos[0]?.url,
       quantity: 1,
       unitPrice: current_price,
-      totalPrice: current_price * 1,
+      totalPrice:   current_price * 1,
     };
     dispatch(addItem(newItem));
     navigate('/cart')
