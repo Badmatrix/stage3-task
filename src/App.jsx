@@ -9,6 +9,19 @@ import SuccessOrder from "./Order/SuccessOrder";
 import { useState } from "react";
 
 function App() {
+  const [pageNum, setPageNum] = useState(1);
+  function handlePageInc() {
+    if (pageNum < 4) {
+      setPageNum((num) => num + 1);
+      scrollTo(0, 100);
+    }
+  }
+  function handlePageDec() {
+    if (pageNum > 1) {
+      setPageNum((num) => num - 1);
+      scrollTo(0, 100);
+    }
+  }
   const router = createBrowserRouter([
     {
       element: <AppLayout />,
