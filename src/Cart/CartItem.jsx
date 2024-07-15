@@ -42,7 +42,7 @@ export default function CartItem({ cart }) {
         </div>
         <div className="font-semibold mx-2">
           <h1 className="text-xl text-wine-700 capitalize">
-            {cart.name} | {brand} | 75 cl
+            {cart.name} | {brand || 'red wine'} | 75 cl
           </h1>
           <h2 className=" text-lg text-wine-800">{newPrice.toLocaleString()} NGN</h2>
         </div>

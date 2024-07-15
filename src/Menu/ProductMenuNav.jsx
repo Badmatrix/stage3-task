@@ -6,18 +6,28 @@ export default function ProductMenuNav({ handlePageDec,handlePageInc,pageNum }) 
   
   return (
     <div className="flex items-center justify-center gap-10 lg:gap-20 my-10 mb-16  border-t border-b border-newgray-200/20 w-1/3 md:w-2/3 lg:w-full mx-auto">
-      <span className=" cursor-pointer" onClick={() => handlePageDec()}>
+      <span
+        className=" cursor-pointer p-3 hover:bg-newgray-200 transition-all duration-100"
+        onClick={() => handlePageDec()}
+      >
         <FaLessThan />
       </span>
       <ul className="productNav flex justify-center font-medium text-lg text-wine-900 gap-7">
         {Array.from({ length: 4 }).map((_, i) => (
-          
-          <li className={`${pageNum === i + 1 ?' border-t border-b border-wine-700':''} cursor-pointer `} key={i}>
+          <li
+            className={`${
+              pageNum === i + 1 ? " border-t border-b border-wine-700" : ""
+            } cursor-pointer `}
+            key={i}
+          >
             {i + 1}
           </li>
         ))}
       </ul>
-      <span className=" cursor-pointer" onClick={() => handlePageInc()}>
+      <span
+        className=" cursor-pointer p-3 hover:bg-newgray-200 transition-all duration-100"
+        onClick={() => handlePageInc()}
+      >
         <FaGreaterThan />
       </span>
     </div>

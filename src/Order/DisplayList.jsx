@@ -5,6 +5,8 @@ export default function DisplayList({ list }) {
     <li className="displayList flex justify-between gap-5 my-4 text-xl ">
       <span className="">
         <input
+          name="price"
+          value={list.price}
           type="checkbox"
           className=" accent-wine-200 mx-3  w-5 aspect-square"
         />

@@ -10,7 +10,6 @@ export default function OrderOverview({ type }) {
   const cart = useSelector(getCart);
 
   const totalCartPrice = useSelector(getTotalCartprice);
-  // const totalCartPrice = 20;
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
   return (
@@ -19,7 +18,7 @@ export default function OrderOverview({ type }) {
       <div className="border-[0.5px] border-wine-800 px-5 bg-wine-70 py-3">
         <header className="flex justify-between font-bold text-xl">
           <span>products</span>
-          <span>products</span>
+          <span>price</span>
         </header>
         <OverviewProducts cart={cart} totalCartPrice={totalCartPrice} />
         <ul className=" list-outside">
@@ -30,7 +29,7 @@ export default function OrderOverview({ type }) {
         </ul>
         <aside className="flex justify-between font-bold text-2xl border-t border-b py-7 border-white">
           <div>total</div>
-          <div className="text-notify">NGN 1,500</div>
+          <div className="text-notify">NGN {(totalCartPrice + 2000).toLocaleString()}</div>
         </aside>
         <div className=" my-5 space-y-5">
           <label className="text-lg flex font-bold">
@@ -76,7 +75,7 @@ export default function OrderOverview({ type }) {
         >
           {isSubmitting
             ? "placing order..."
-            : ` place your order ${totalCartPrice}`}
+            : ` place your order `}
         </button>
       </div>
     </div>
